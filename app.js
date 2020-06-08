@@ -24,9 +24,10 @@ app.get("/register", (request, response, next) => {
 });
 
 app.post("/register", (request, response, next) => {
-    console.log(request.session.u2f, request.body.registerResponse);
+    console.log("request.session.u2f", request.session.u2f);
+    console.log("request.body.registerResponse", request.body.registerResponse);
     var registration = U2F.checkRegistration(request.session.u2f, request.body.registerResponse);
-    console.log(registration);
+    console.log("registration", registration);
     if (!registration.successful) {
         return response.status(500).send({ message: "error" });
     }

@@ -14,6 +14,7 @@
                 if(window.u2f && window.u2f.register) {
                     axios({ method: "GET", "url": "/register", withCredentials: true }).then(result => {
                         window.u2f.register(result.data.appId, [result], [], response => {
+                            console.log(response);
                             axios({ method: "POST", "url": "/register", "data": { registerResponse: response }, "headers": { "content-type": "application/json" }, withCredentials: true }).then(result => {
                                 console.log(result.data);
                             }, error => {
