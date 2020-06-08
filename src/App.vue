@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <U2FComponent />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import U2FComponent from './components/U2FComponent.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    U2FComponent
   }
 }
 </script>
