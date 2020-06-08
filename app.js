@@ -6,7 +6,7 @@ const HTTPS = require("https");
 const FS = require("fs");
 const session = require("express-session");
 
-const APP_ID = "https://localhost:443";
+const APP_ID = "https://trends247.live";
 
 var app = Express();
 
