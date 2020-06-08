@@ -18,14 +18,15 @@ app.use(Cors({ origin: [APP_ID], credentials: true }));
 var user;
 
 app.get("/register", (request, response, next) => {
-    console.log('sdfsdf')
     request.session.u2f = U2F.request(APP_ID);
     response.send(request.session.u2f);
 });
 
 app.post("/register", (request, response, next) => {
+    console.log(request.session.u2f, request.body.registerResponse);
     var registration = U2F.checkRegistration(request.session.u2f, request.body.registerResponse);
-    if(!registration.successful) {
+    console.log(registration);
+    if (!registration.successful) {
         return response.status(500).send({ message: "error" });
     }
     user = registration;
