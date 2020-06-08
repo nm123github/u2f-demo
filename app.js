@@ -42,11 +42,11 @@ app.post("/login", (request, response, next) => {
     response.send(success);
 });
 
-app.use(Express.static(__dirname + 'dist')); //Serves resources from public folder
+app.use(Express.static(__dirname + '/dist')); //Serves resources from public folder
 
 HTTPS.createServer({
-    key: FS.readFileSync("domain.key"),
-    cert: FS.readFileSync("domain.crt"),
+    key: FS.readFileSync("./private.key"),
+    cert: FS.readFileSync("./certificate.crt"),
 }, app).listen(443, () => {
     console.log("Listening at :443...");
 });
