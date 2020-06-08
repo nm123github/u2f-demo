@@ -1,0 +1,4 @@
+localhost:443 {
+    root dist
+    tls domain.crt domain.key
+}
