@@ -19,6 +19,7 @@ var user;
 
 app.get("/register", (request, response, next) => {
     request.session.u2f = U2F.request(APP_ID);
+    console.log(request.session.u2f);
     response.send(request.session.u2f);
 });
 
